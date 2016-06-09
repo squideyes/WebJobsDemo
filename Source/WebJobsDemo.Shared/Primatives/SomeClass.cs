@@ -9,7 +9,6 @@ namespace WebJobsDemo.Shared
         public Guid SomeClassId { get; set; }
 
         [Required]
-
         public string Name { get; set; }
     }
 }

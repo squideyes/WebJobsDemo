@@ -28,7 +28,7 @@ namespace WebJobsDemo.TelemetrySource
                     Name = "Something Important To Know"
                 };
 
-                var telemetry = new Telemetry()
+                var telemetry = new TelemetryMessage()
                 {
                     TrackingId = Guid.NewGuid(),
                     UserId = Guid.NewGuid(),

@@ -15,8 +15,8 @@ namespace WebJobsDemo.WebJob
     public class Functions
     {
         public static async Task AddTelemetry(int dequeueCount, TextWriter log,
-            [QueueTrigger("addtelemetry")] Telemetry telemetry,
-            [Blob("telemetryerrors/{TrackingId}")] CloudBlockBlob blob)
+            [QueueTrigger("addtelemetry")] TelemetryMessage telemetry,
+            [Blob("telemetryerrors/{TrackingId}.json")] CloudBlockBlob blob)
         {
             try
             {
@@ -46,7 +46,7 @@ namespace WebJobsDemo.WebJob
             {
                 if (dequeueCount == 5)
                 {
-                    var errorInfo = new ErrorInfo<Telemetry>()
+                    var errorInfo = new ErrorInfo<TelemetryMessage>()
                     {
                         Error = error,
                         Message = telemetry
@@ -62,7 +62,7 @@ namespace WebJobsDemo.WebJob
         }
 
         public static async Task HandleTelemetryPoison(
-            [QueueTrigger("addtelemetry-poison")] Telemetry telemetry,
+            [QueueTrigger("addtelemetry-poison")] TelemetryMessage telemetry,
             TextWriter log, [SendGrid] SendGridMessage message)
         {
             message.AddTo("louis@squideyes.com");

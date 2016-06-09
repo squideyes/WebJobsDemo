@@ -45,7 +45,7 @@
     <Compile Include="Primatives\SomeClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helpers\StringExtenders.cs" />
-    <Compile Include="Messages\Telemetry.cs" />
+    <Compile Include="Messages\TelemetryMessage.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

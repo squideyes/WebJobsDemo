@@ -16,9 +16,7 @@ namespace WebJobsDemo.WebJob
 
             var config = new JobHostConfiguration();
 
-            config.Tracing.ConsoleLevel = TraceLevel.Verbose;
-
-            config.UseTimers();
+           config.Tracing.ConsoleLevel = TraceLevel.Verbose;
 
             config.UseCore();
 

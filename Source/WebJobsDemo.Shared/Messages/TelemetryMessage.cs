@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WebJobsDemo.Shared
 {
-    public class Telemetry
+    public class TelemetryMessage
     {
         [Required]
         public Guid TrackingId { get; set; }
