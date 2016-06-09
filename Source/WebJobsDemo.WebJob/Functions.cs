@@ -35,7 +35,7 @@ namespace WebJobsDemo.WebJob
 
                     db.Telemetries.Add(data);
 
-                    throw new Exception("Ooops!");
+                    //throw new Exception("Ooops!");
 
                     await db.SaveChangesAsync();
                 }
