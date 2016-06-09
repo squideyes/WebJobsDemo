@@ -53,13 +53,11 @@ namespace WebJobsDemo.WebJob
                     };
 
                     await blob.UploadTextAsync(
-                        JsonConvert.SerializeObject(telemetry));
+                        JsonConvert.SerializeObject(errorInfo));
                 }
 
                 await log.WriteLineAsync(
                     $"[AddTelemetry] Error: {error.Message.ToSingleLine()} (Telementry: {telemetry}, DequeueCount: {dequeueCount})");
-
-                throw;
             }
         }
 
